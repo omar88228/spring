@@ -1,0 +1,25 @@
+package it.billing.service;
+
+import java.util.Date;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import it.billing.entity.Bill;
+import it.billing.entity.Customer;
+import it.billing.entity.Product;
+import it.billing.entity.ProductItem;
+import it.billing.openfeign.CustomerRestClient;
+import it.billing.openfeign.ProductRestClient;
+import it.billing.repository.BillRepository;
+
+@Service
+public class BillServiceImpl implements BillService {
+
+	private BillRepository repository;
+	private ProductItemService productItemService;
+	private CustomerRestClient customerRestClient;
+	private ProductRestClient productRestClient;
+
+	
+
+}

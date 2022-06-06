@@ -1,0 +1,82 @@
+package it.billing.service;
+
+import java.util.Date;
+import java.util.List;
+import java.util.function.Consumer;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+import it.billing.entity.Bill;
+import it.billing.entity.Customer;
+import it.billing.entity.Product;
+import it.billing.entity.ProductItem;
+import it.billing.openfeign.CustomerRestClient;
+import it.billing.openfeign.ProductRestClient;
+import it.billing.repository.BillRepository;
+
+@Service
+public class BillServiceImpl implements BillService {
+
+	private BillRepository repository;
+	private StreamBridge bridge;
+	
+	@Autowired
+	public BillServiceImpl(BillRepository repository, StreamBridge bridge) {
+		super();
+		this.repository = repository;
+		this.bridge = bridge;
+	}
+	
+	@Override
+	public Bill add(Bill bill) {
+		bridge.send("T1", bill.getCustomerId());
+		customerConsumer(bill);
+		repository.save(bill);
+		return bill;
+	}
+	@Override
+	public List<Bill> showAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill showById(int id) {
+		Bill bill = repository.findById(id).get();
+		bridge.send("T1", bill.getCustomerId());
+		System.out.println(bill);
+		customerConsumer(bill);
+		return bill;
+	}
+	@Override
+	public Bill deleteById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill addProductItem(int id, int productItemId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill updateBillCustomerId(int idBill, int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill updateBillingDate(int id, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Consumer<Customer> customerConsumer(Bill bill){
+		return (input)->{
+			bill.setCustomer(input);
+			System.out.println(input);
+		};
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package it.billing.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import it.billing.entity.Product;
+import it.billing.entity.ProductItem;
+import it.billing.openfeign.ProductRestClient;
+import it.billing.repository.ProductItemRepository;
+
+@Service
+public class ProductItemServiceImpl implements ProductItemService {
+
+	private ProductItemRepository repository;
+	private ProductRestClient productRestClient;
+
+	
+}

@@ -1,0 +1,39 @@
+package it.billing.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+@Entity
+@Data
+@NoArgsConstructor
+@ToString
+public class ProductItem {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private int productId ;
+	private double price ;
+	private int quantity ;
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Bill bill;
+	@Transient
+	Product product ;
+	public ProductItem(int id, int productId, double price, int quantity, Bill bill) {
+		super();
+		this.id = id;
+		this.productId = productId;
+		this.price = price;
+		this.quantity = quantity;
+		this.bill = bill;
+	}
+	
+}

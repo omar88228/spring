@@ -1,0 +1,60 @@
+package it.billing.service;
+
+import java.util.Date;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.stereotype.Service;
+import it.billing.entity.Bill;
+import it.billing.entity.Customer;
+import it.billing.entity.Product;
+import it.billing.entity.ProductItem;
+import it.billing.openfeign.CustomerRestClient;
+import it.billing.openfeign.ProductRestClient;
+import it.billing.repository.BillRepository;
+
+@Service
+public class BillServiceImpl implements BillService {
+
+	private BillRepository repository;
+	private StreamBridge bridge;
+	@Override
+	public Bill add(Bill bill) {
+		
+		repository.save(bill);
+		return null;
+	}
+	@Override
+	public List<Bill> showAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill showById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill deleteById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill addProductItem(int id, int productItemId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill updateBillCustomerId(int idBill, int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Bill updateBillingDate(int id, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

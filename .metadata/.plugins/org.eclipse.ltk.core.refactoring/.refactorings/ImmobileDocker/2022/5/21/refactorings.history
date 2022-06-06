@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Address.java&apos; to &apos;customer/src/main/java/it.costumer.entity&apos;&#x0D;&#x0A;- Original project: &apos;ImmobileDocker&apos;&#x0D;&#x0A;- Destination element: &apos;customer/src/main/java/it.costumer.entity&apos;&#x0D;&#x0A;- Original element: &apos;it.immobile.entity.Address.java&apos;" description="Copy compilation unit" destination="=customer/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;it.costumer.entity" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;it.immobile.entity{Address.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1653470332571" units="1" version="1.0"/>
+</session>

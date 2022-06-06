@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=inventory/C:\/Users\/o.oueslati\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.0\/spring-data-jpa-2.7.0.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.0=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1653469536767"/>
+    <typeInfo handle="=billing/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;it.billing.repository{BillRepository.java[BillRepository" modifiers="513" timestamp="1653555975801"/>
+    <typeInfo handle="=billing/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;it.billing.service{BillService.java[BillService" modifiers="513" timestamp="1653754197025"/>
+</typeInfoHistroy>
